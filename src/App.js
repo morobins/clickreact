@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import Navbar from './components/Navbar';
-import Wrapper from './components/Wrapper';
-import Card from './components/Card';
-import Title from './components/Title';
+import Navbar from './components/Navbar/Navbar';
+import Wrapper from './components/Wrapper/Wrapper';
+import Card from './components/Card/Card';
+import Title from './components/Title/Title';
+import Container from "./Container";
+import Row from "./Row";
+import Column from "./Column";
 import characters from './characters.json';
 
 //take in an array and shuffle using the Math.random method
@@ -75,23 +78,29 @@ handleShuffle = () => {
   render() {
     return (
       <Wrapper>
-      <Navbar
-      title="Simpsons Game"
-      score={this.state.score}
-      highscore={this.state.highscore}
-      />
-      <Title>Game Description</Title>
-      {this.state.characters.map(character =>(
-        <Card
-        key={character.id}
-        handleClick={this.handleClick}
-        handleIncrement={this.handleIncrement}
-        handleReset={this.handleReset}
-        handleShuffle={this.handleShuffle}
-        id={character.id}
-        image={character.image}
+        <Navbar
+          title="Simpsons Game"
+          score={this.state.score}
+          highscore={this.state.highscore}
         />
-      ))}
+        <Title>Game Description</Title>
+        <Container>
+          <Row>
+            {this.state.characters.map(character =>(
+            <Column size="md-3 sm-6">
+              <Card
+                key={character.id}
+                handleClick={this.handleClick}
+                handleIncrement={this.handleIncrement}
+                handleReset={this.handleReset}
+                handleShuffle={this.handleShuffle}
+               id={character.id}
+              image={character.image}
+              />
+            </Column>
+            ))}
+          </Row>
+        </Container>
       </Wrapper>
     );
   }
