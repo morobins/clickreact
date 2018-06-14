@@ -10,6 +10,7 @@ import Column from "./Column";
 import characters from './characters.json';
 
 //take in an array and shuffle using the Math.random method
+//TODO: Add the .sort from W3Schools
 function charactersArr(array) {
   for (let i = array.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
@@ -74,7 +75,7 @@ handleShuffle = () => {
   this.setState({ characters: shuffledCharacters });
 };
 
-
+//TODO:Add the words "score" and "highscore"
   render() {
     return (
       <Wrapper>
@@ -87,9 +88,8 @@ handleShuffle = () => {
         <Container>
           <Row>
             {this.state.characters.map(character =>(
-            <Column size="md-3 sm-6">
+            <Column size="md-3 sm-6" key={character.id}>
               <Card
-                key={character.id}
                 handleClick={this.handleClick}
                 handleIncrement={this.handleIncrement}
                 handleReset={this.handleReset}

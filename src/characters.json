@@ -58,5 +58,18 @@
     "name": "Otto",
     "image": "otto.jpg",
     "clicked": false
+  },
+  {
+    "id": 11,
+    "name": "Moe",
+    "image": "moe.png",
+    "clicked": false
+  },
+  {
+    "id": 12,
+    "name": "Ralph",
+    "image": "ralph.png",
+    "clicked": false
   }
+
 ]
