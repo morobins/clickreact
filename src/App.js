@@ -84,7 +84,7 @@ handleShuffle = () => {
           score={this.state.score}
           highscore={this.state.highscore}
         />
-        <Title>Game Description</Title>
+        <Title>There's only one thing to do at a moment like this: CLICK!</Title>
         <Container>
           <Row>
             {this.state.characters.map(character =>(
