@@ -75,7 +75,7 @@ handleShuffle = () => {
   this.setState({ characters: shuffledCharacters });
 };
 
-//TODO:Add the words "score" and "highscore"
+
   render() {
     return (
       <Wrapper>
